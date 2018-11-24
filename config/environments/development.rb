@@ -16,6 +16,7 @@ Rails.application.configure do
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
